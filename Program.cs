@@ -8,7 +8,7 @@ class Program
     {
         Console.OutputEncoding = Encoding.UTF8;
 
-        //Завдання 3
+        //Завдання 2
 
         Console.WriteLine("Введіть число:");
         int number = Convert.ToInt32(Console.ReadLine());
@@ -25,7 +25,7 @@ class Program
             {
                 return Cirakuz(number * 3 + 1);
             }
-            return number; //цей return вже повертає одиницю
+            return number;
         }
     }
 }
