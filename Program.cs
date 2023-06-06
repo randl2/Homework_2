@@ -28,6 +28,6 @@ class Program
 
         Console.WriteLine("Завдання 6\n");
         TwentyOne twentyOne = new TwentyOne();
-        twentyOne.Game(sortedDeck);
+        twentyOne.Game();
     }
 }
