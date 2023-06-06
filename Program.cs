@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using ForLessons;
+using System.Text;
 
 namespace Homework;
 
@@ -8,24 +9,25 @@ class Program
     {
         Console.OutputEncoding = Encoding.UTF8;
 
-        //Завдання 2
+        var deckThings = new DeckThings();
 
-        Console.WriteLine("Введіть число:");
-        int number = Convert.ToInt32(Console.ReadLine());
+        List<string> deck = new List<string>() { "6", "6", "6", "6", "7", "7", "7", "7", "8", "8", "8", "8", "9", "9", "9", "9", "10",
+        "10", "10", "10", "J", "J", "J", "J", "Q", "Q", "Q", "Q", "K", "K", "K", "K", "A", "A", "A", "A"};
 
-        Console.WriteLine(Cirakuz(number));
+        Console.WriteLine("Завдання 2\n");
+        var newDeck = deckThings.MixDeck(deck);
 
-        int Cirakuz(int number)
-        {
-            if (number % 2 == 0)
-            {
-                return Cirakuz(number / 2);
-            }
-            else if(number % 2 == 1 && number > 1)
-            {
-                return Cirakuz(number * 3 + 1);
-            }
-            return number;
-        }
+        Console.WriteLine("Завдання 3\n");
+        deckThings.FindPositionOfAce(newDeck);
+
+        Console.WriteLine("Завдання 4\n");
+        deckThings.RelocateAcesToBeginning(newDeck);
+
+        Console.WriteLine("Завдання 5\n");
+        var sortedDeck = deckThings.SortDeck(ref newDeck);
+
+        Console.WriteLine("Завдання 6\n");
+        TwentyOne twentyOne = new TwentyOne();
+        twentyOne.Game();
     }
 }
